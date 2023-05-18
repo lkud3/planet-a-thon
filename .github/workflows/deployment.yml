@@ -1,4 +1,5 @@
 # File: .github/workflows/workflow.yml
+#change
 on:
   push:
     branches:
@@ -21,7 +22,7 @@ jobs:
       - name: "Activate Namespace"
         uses: okteto/namespace@latest
         with:
-          namespace: opensrcerer
+          namespace: lkud3
 
       - name: "Trigger the pipeline"
         uses: okteto/pipeline@latest
