@@ -1,6 +1,6 @@
 # ---- BUILD ----
 # Use the gradle:8.1.1-jdk17-focal image as the base image for the build stage.
-FROM gradle:8.1.1-jdk17-focal as BUILD
+FROM amazoncorretto:17-alpine as BUILD
 
 # Set the working directory to /app.
 WORKDIR /app
@@ -12,7 +12,7 @@ COPY . .
 ENV APP_LOGGING_LEVEL DEBUG
 
 # Build the project using Gradle.
-RUN gradle build
+RUN ./gradlew build
 
 # ---- RUN ----
 # Use the amazoncorretto:17-alpine image as the base image for the run stage.
